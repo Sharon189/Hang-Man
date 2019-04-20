@@ -7,12 +7,13 @@ import java.util.Arrays;
 
 public class Main {
 
-    public static JFrame MainFrame;
-    public void MainFrameConf(){
+    //public static JFrame MainFrame;
 
+
+    public static void MainFrameConf(){
         //Main Frame of the game.
         //setLayout(new BorderLayout());
-        MainFrame = new JFrame("HandMan Game");
+        JFrame MainFrame = new JFrame("HandMan Game");
         MainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         MainFrame.setSize(600, 500);
 
@@ -26,9 +27,6 @@ public class Main {
 
 
     public static void main(String[] arg) throws IOException  {
-
-
-
 
         String secretWord = new FileRead().ReadFromFile(); //Get secret word from a "Word.txt" file.
         System.out.println("The Word is: "+secretWord); //Print the word for programmer debug.
@@ -46,10 +44,8 @@ public class Main {
 
 
         HmGUI y = new HmGUI();
-        new InputTextField();
-
         InputTextField inputOfUser =  new InputTextField();
-
+        MainFrameConf();
 
         while (true)
         {
@@ -58,8 +54,10 @@ public class Main {
 //                            " guesses."+"\n"+answers+"\n"+
 //                            Arrays.toString(blanks).replace(",", " ").replace("[","").replace("]","")); //Prints a space
            String letter = inputOfUser.inputNo;
-           if (letter==null) {
-               System.out.println("The letter is: " + letter + " ,ShoutDown..."); //if Null think****************************************<-
+
+           //if there are no input from the user then close the app.
+           if (letter == null) {
+               System.out.println("The letter is: " + letter + " ,Shutdown...");
                 break;
            }
                char letterChar = letter.charAt(0); //converts string letter to char letterchar

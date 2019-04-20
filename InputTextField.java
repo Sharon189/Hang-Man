@@ -25,14 +25,16 @@ public class InputTextField extends Frame implements ActionListener {
         cmdOK.addActionListener(this);
 
         setVisible(true);
+        System.out.println("Line 28");
     }
 
 
 
 
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==cmdOK)
-            inputNo = userInput.getText();
+        if(e.getSource()==cmdOK){
+            System.out.println("The address of button cmdOK is : "+e.getSource());
+            inputNo = userInput.getText();}
         else
             inputNo = "N";
         System.out.println("The user input is : "+inputNo);

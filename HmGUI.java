@@ -32,6 +32,11 @@ public class HmGUI extends JPanel {
 
 
     int stage=0;
+
+    public boolean GameOver(){
+        return stage >= 9;
+    }
+
     public void nextStage()
     {
         stage++;
@@ -105,6 +110,7 @@ public class HmGUI extends JPanel {
             //draws the mouth
             Arc2D.Double mouth = new Arc2D.Double(40.00, 50.00, 20.00, 20.00, 180.00, 190.00, Arc2D.OPEN);
             g2.draw(mouth);
+
         }
     }
 
