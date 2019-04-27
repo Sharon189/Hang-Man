@@ -1,3 +1,7 @@
+Gazebo
+Gypsy
+Haiku
+Haphazard
 Awkward
 Bagpipes
 Banjo
